@@ -10,6 +10,7 @@ class Main{
         BufferedWriter output = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int count = Integer.parseInt(input.readLine());
+        input.close();
 
         for(int i =0;i<count;i++){
             for(int k=count; k-1>i;k--){
