@@ -3,7 +3,7 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.IOException;
-import java.util.StringTokenizer;
+
 
 //뭔소리고 그냥 인풋 프린트하면 되는건가
 
@@ -19,6 +19,8 @@ class Main {
             output.write(word+"\n");
             output.flush();
         }
+        input.close();
+        output.close();
 
 
 
