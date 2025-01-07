@@ -3,7 +3,7 @@ class Solution {
         String answer = "";
     
         for(int i=1; i< food.length; i++){
-            for(int j =1; j<=500;j++ ){
+            for(int j =1; j<=1000;j++ ){
             if((food[i]/2)==j){
                 for(int k=j; k>0; k--)
                 answer= answer+i;
@@ -13,7 +13,7 @@ class Solution {
         answer = answer + 0;
         
         for(int i=food.length-1; i>0; i--){
-            for(int j =1; j<=500;j++ ){
+            for(int j =1; j<=1000;j++ ){
             if((food[i]/2)==j){
                 for(int k=j; k>0; k--)
                 answer= answer+i;
