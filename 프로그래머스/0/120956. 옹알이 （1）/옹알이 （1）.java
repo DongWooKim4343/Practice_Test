@@ -7,16 +7,17 @@ class Solution {
             for(int j = 0 ; j < words.length; j++){
                 if(babbling[i].contains(words[j])){
                     babbling[i]=babbling[i].replace(words[j], "1");
+            
                    
                 }
             }   
         }
         
         for(int i=0; i<babbling.length; i++){
-            for(int j = 0 ; j < words.length; j++){
+        
                 babbling[i]=babbling[i].replaceAll("1", "");
-                }
             
+            System.out.println(babbling[i]);
             if(babbling[i].equals("")){
                 answer++;
                 }
