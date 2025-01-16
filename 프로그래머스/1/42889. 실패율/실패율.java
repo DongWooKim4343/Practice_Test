@@ -24,6 +24,12 @@ class Solution {
             }
             answerMap.put(i,result);
             length = length - check;
+            //스테이지에 도달한 유저가 없을경우도 answerMap.put(i,result);이 실행시켜야함, if문 밖으로 빼서 범위를 맞춰줘야함 null 방지
+            
+
+
+            
+
         }
         
          // 실패율을 기준으로 내림차순 정렬, 실패율이 같으면 스테이지 번호 오름차순
