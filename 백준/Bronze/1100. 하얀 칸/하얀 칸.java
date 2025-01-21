@@ -7,7 +7,7 @@ class Main{
         int count = 0;
 
         for(int i = 0; i < 8; i++){
-            String[] array = input.nextLine().split("");
+            String array[] = input.nextLine().split("");
             for(int j = 0; j < 8; j++) {
                 chessBoard[i][j] = array[j];
             }
