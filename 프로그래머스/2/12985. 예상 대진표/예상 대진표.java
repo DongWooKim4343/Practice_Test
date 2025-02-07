@@ -6,8 +6,25 @@ class Solution
         int answer = 0;
         
         while(a!=b){
-                a =(a+1)/2;
-                b =(b+1)/2;
+            if(a%2!=0){
+                if(a!=1){
+                    a++;
+            }
+            
+        }
+            if(b%2!=0){
+                if(b!=1){
+                    b++;
+                }
+                
+        }
+            if(a!=1){
+                a /=2;
+            }
+            if(b!=1){
+                b /=2;
+            }
+            
             
             answer++;
         }
