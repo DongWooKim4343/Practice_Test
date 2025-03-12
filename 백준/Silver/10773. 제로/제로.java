@@ -21,8 +21,8 @@ class Main{
             }
         }
         
-        while(!stack.isEmpty()){
-            answer+=stack.pop();
+        for(int i=0; i< stack.size(); i++){
+            answer+=stack.get(i);
         }
         
         output.write(String.valueOf(answer));
