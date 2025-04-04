@@ -9,50 +9,32 @@ class Main{
         int T = Integer.parseInt(br.readLine());
 
         for(int i=0; i<T ; i++){
-            int N = Integer.parseInt(br.readLine());//수첩1의 정수 갯수
-            int[] note1 = new int[N];
+            int N = Integer.parseInt(br.readLine()); // 수첩1의 정수 갯수
+
+            
+            HashSet<Integer> note1Set = new HashSet<>();
             StringTokenizer st = new StringTokenizer(br.readLine());
 
             for(int j=0; j<N; j++){
-                note1[j]=Integer.parseInt(st.nextToken());
+                note1Set.add(Integer.parseInt(st.nextToken()));
             }
-            Arrays.sort(note1);
+           
 
-            int M = Integer.parseInt(br.readLine()); //수첩 2의 정수 갯수
-            int[] note2 = new int[M];
+            int M = Integer.parseInt(br.readLine()); // 수첩 2의 정수 갯tn
             StringTokenizer st2 = new StringTokenizer(br.readLine());
 
-            for(int k=0; k<M; k++){
-                note2[k]=Integer.parseInt(st2.nextToken());
-            }
-            int index =0;
-            while(M-- >0){
-                int low = 0;
-                int high = N-1;
-                int target = note2[index];
-                boolean trigger = false;
+            for(int k=0; k<M; k++){ // M번 반복
+                int target = Integer.parseInt(st2.nextToken()); // 수첩2의 숫자 하나씩 읽기
 
-                while(low <= high){
-                    int mid = low+(high-low)/2;
-
-                    if(target > note1[mid]){
-                        low =mid+1;
-                    }else if(target < note1[mid]){
-                        high = mid-1;
-                    }else if(target == note1[mid]){
-                        trigger = true;
-                        break;
-                    }
+                if(note1Set.contains(target)){
+                    bw.write(1 + "\n");
+                } else {
+                    bw.write(0 + "\n");
                 }
-                if(!trigger){
-                    bw.write(0+"\n");
-                }else{
-                    bw.write(1+"\n");
-                }
-                index++;
             }
-
         }
         bw.flush();
+        bw.close();
+        br.close();
     }
 }
