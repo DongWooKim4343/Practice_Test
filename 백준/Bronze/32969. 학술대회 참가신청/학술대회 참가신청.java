@@ -7,23 +7,21 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        String words= br.readLine();
 
         String[] digital = {"social", "history", "language", "literacy"};
         String[] bigData ={"bigdata", "public", "society"};
 
-        while (st.hasMoreTokens()) {
-            String word = st.nextToken();
-
-            for (int i = 0; i < digital.length; i++) {
-                if (word.equals(digital[i])) {
-                    bw.write("digital humanities");
-                }
+        for(int i=0; i< digital.length; i++){
+            if(words.contains(digital[i])){
+                bw.write("digital humanities");
+                break;
             }
-            for (int i = 0; i < bigData.length; i++) {
-                if (bigData[i].equals(word)) {
-                    bw.write("public bigdata");
-                }
+        }
+        for(int i=0; i< bigData.length; i++){
+            if(words.contains(bigData[i])){
+                bw.write("public bigdata");
+                break;
             }
         }
 
