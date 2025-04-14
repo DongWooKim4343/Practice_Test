@@ -41,10 +41,6 @@ class Main{
 
             answer++;
 
-            if(N==0 && jimin!=hansu){
-                answer =-1;
-                break;
-            }
         }
 
         bw.write(answer+"");
