@@ -8,37 +8,24 @@ class Main{
 
         int num = Integer.parseInt(br.readLine());
 
-        boolean keys =true;
-        boolean phone =true;
-        boolean wallet =true;
+        List<String> list = new ArrayList<>();
+        list.add("keys");
+        list.add("phone");
+        list.add("wallet");
 
-        for(int i=0; i<num ;i++){
-            String str = br.readLine();
-
-            if(str.equals("keys")){
-                keys=false;
-            }else if(str.equals("phone")){
-                phone=false;
-            }else if(str.equals("wallet")){
-                wallet=false;
-            }
+        for(int i=0; i<num; i++){
+            list.remove(br.readLine());
         }
+
         StringBuilder sb = new StringBuilder();
 
-        if(!keys&&!phone&&!wallet){
+        if(list.isEmpty()){
             sb.append("ready");
-        }else {
-            if(keys){
-                sb.append("keys\n");
-            }
-            if(phone){
-                sb.append("phone\n");
-            }
-            if(wallet){
-                sb.append("wallet\n");
+        }else{
+            for(String s : list){
+                sb.append(s).append("\n");
             }
         }
-
 
         bw.write(sb.toString());
         bw.flush();
