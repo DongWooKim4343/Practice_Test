@@ -8,19 +8,19 @@ class Main{
 
         int L = Integer.parseInt(br.readLine());
         String str = br.readLine();
+        int M = 1234567891;
 
+        long rP = 1;
         long sum = 0;
         for(int i=0; i<L; i++){
             char c= str.charAt(i);
             int uu = c-96;
-            long rP = (long) Math.pow(31,i);
-            long hh = uu*rP;
-            sum += hh;
+            long hh = (uu*rP)%M;
+            sum = (sum+hh) %M;
+            rP = (rP*31)%M;
         }
 
-        long answer = sum%1234567891;
-
-        bw.write(String.valueOf(answer));
+        bw.write(String.valueOf(sum));
         bw.flush();
         br.close();
         bw.close();
