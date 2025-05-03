@@ -4,25 +4,23 @@ import java.util.*;
 class Solution {
     public String[] solution(String myStr) {
         
+        StringTokenizer st = new StringTokenizer(myStr, "abc");
+        String[] answer = new String[st.countTokens()];
         
-        StringBuilder sb = new StringBuilder();
-        boolean bbb = true;
-        for(int i=0; i<myStr.length(); i++){
-            char c = myStr.charAt(i);
-            if(c == 'a' || c == 'b' || c == 'c'){
-                sb.append(" ");
-            }else{
-                sb.append(c);
-                bbb =false;
+        if (answer.length == 0) {
+            return new String[]{"EMPTY"};
+        }
+        
+        while(st.hasMoreTokens()){
+            for(int i=0; i<answer.length; i++){
+                answer[i] = st.nextToken();
             }
         }
         
-        
-        
-        String[] answer = sb.toString().trim().split("\\s+");
         if(answer[0].equals("")){
-            answer[0] = "EMPTY";
+            answer[0]="EMPTY";
         }
+        
         return answer;
     }
 }
