@@ -8,7 +8,7 @@ class Main{
 
         int N = Integer.parseInt(br.readLine());
 
-        List<Integer> list = new ArrayList<>();
+        Stack<Integer> stack = new Stack<>();
 
         StringBuilder sb =new StringBuilder();
 
@@ -18,25 +18,24 @@ class Main{
 
             if(order==1){
                 int num = Integer.parseInt(st.nextToken());
-                list.add(num);
+                stack.push(num);
             }else if(order==2){
-                if(list.isEmpty()){
+                if(stack.isEmpty()){
                     sb.append("-1").append("\n");
                 }else{
-                    sb.append(list.get(list.size()-1)).append("\n");
-                    list.remove(list.size()-1);
+                    sb.append(stack.pop()).append("\n");
                 }
             }else if(order==3){
-                sb.append(list.size()).append("\n");
+                sb.append(stack.size()).append("\n");
             }else if(order==4){
-                if(list.isEmpty()){
+                if(stack.isEmpty()){
                     sb.append("1").append("\n");
                 }else{
                     sb.append("0").append("\n");
                 }
             }else if(order==5){
-                if(!list.isEmpty()){
-                    sb.append(list.get(list.size()-1)).append("\n");
+                if(!stack.isEmpty()){
+                    sb.append(stack.peek()).append("\n");
                 }else{
                     sb.append("-1").append("\n");
                 }
