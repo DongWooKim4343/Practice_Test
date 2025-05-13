@@ -2,35 +2,34 @@ import java.util.*;
 import java.io.*;
 
 class Main{
-    public static void main(String[] args) throws IOException {
-        
-        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter output = new BufferedWriter(new OutputStreamWriter(System.out));
-        
-        int answer =0;
-        
-        int num = Integer.parseInt(input.readLine());
-        Stack<Integer> stack = new Stack<>();
-        
-        for(int i=0; i< num; i++){
-            int n = Integer.parseInt(input.readLine());
-            if(n==0){
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int K = Integer.parseInt(br.readLine());
+
+        Stack<Integer> stack = new Stack();
+
+        for(int i=0; i<K; i++){
+
+            int num = Integer.parseInt(br.readLine());
+
+            if(num==0){
                 stack.pop();
             }else{
-                stack.push(n);
+                stack.push(num);
             }
+
         }
-        
-        for(int i=0; i< stack.size(); i++){
-            answer+=stack.get(i);
+        int sum = 0;
+        for(int n : stack){
+            sum+=n;
         }
-        
-        output.write(String.valueOf(answer));
-        output.flush();
-        
-        
-        
-        
+
+        bw.write(sum+"");
+        bw.flush();
+        bw.close();
+        br.close();
+
     }
-    
 }
