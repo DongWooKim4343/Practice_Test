@@ -14,13 +14,15 @@ class Main{
         for(int i=0; i<N; i++){
             String str = br.readLine();
             if(str.equals("ENTER")){
-                count+= set.size();
                 set.clear();
             }else{
-                set.add(str);
+                if (!set.contains(str)){
+                    set.add(str);
+                    count++;
+                }
+
             }
         }
-        count+= set.size();
 
         bw.write(count+"");
         bw.flush();
