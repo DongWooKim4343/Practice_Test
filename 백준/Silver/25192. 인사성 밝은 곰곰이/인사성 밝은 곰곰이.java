@@ -7,22 +7,20 @@ class Main{
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int N = Integer.parseInt(br.readLine());
-        Map<String, Boolean> map = new HashMap<>();
+        Set<String> set = new HashSet<>();
 
         int count = 0;
 
         for(int i=0; i<N; i++){
             String str = br.readLine();
             if(str.equals("ENTER")){
-                map.clear();
+                count+= set.size();
+                set.clear();
+            }else{
+                set.add(str);
             }
-            map.put(str,map.getOrDefault(str,true));
-            if(!str.equals("ENTER") && map.get(str)){
-                count++;
-                map.put(str,false);
-            }
-
         }
+        count+= set.size();
 
         bw.write(count+"");
         bw.flush();
