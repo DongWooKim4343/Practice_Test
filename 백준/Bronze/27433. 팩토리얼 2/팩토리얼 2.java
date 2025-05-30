@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.*;
+
+class Main{
+    public static void main(String[] args)throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int N = Integer.parseInt(br.readLine());
+        bw.write(factorial(N)+"");
+        bw.flush();
+        bw.close();
+        br.close();
+    }
+    static long factorial(long n){
+        if(n==0){
+            return 1;
+        }
+        return n*factorial(n-1);
+    }
+}
